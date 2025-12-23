@@ -3,7 +3,7 @@
   "private": true,
   "workspaces": [
     "web/apps/*",
-    "web/packages/*"
+    "web/apps/frontend/packages/*"
   ],
   "packageManager": "bun@1.1.0",
   "scripts": {
