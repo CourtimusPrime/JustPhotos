@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { Photo } from '@web/types'
 
@@ -42,11 +42,7 @@ function Feed() {
 function PhotoItem({ photo }: { photo: Photo }) {
   const [imageUrl, setImageUrl] = useState<string>('')
 
-  useEffect(() => {
-    fetchSignedUrl()
-  }, [])
-
-  const fetchSignedUrl = async () => {
+  const fetchSignedUrl = useCallback(async () => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/photos/${photo.id}/signed-url`)
       if (response.ok) {
@@ -56,7 +52,12 @@ function PhotoItem({ photo }: { photo: Photo }) {
     } catch (error) {
       console.error('Failed to fetch signed URL', error)
     }
-  }
+  }, [photo.id])
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchSignedUrl()
+  }, [fetchSignedUrl])
 
   return (
     <div>
