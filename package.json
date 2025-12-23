@@ -2,8 +2,8 @@
   "name": "just-photos",
   "private": true,
   "workspaces": [
-    "apps/*/*",
-    "packages/*"
+    "web/apps/*",
+    "web/packages/*"
   ],
   "packageManager": "bun@1.1.0",
   "scripts": {

@@ -17,15 +17,15 @@ Do not introduce npm, yarn, or pnpm.
 ## Directory Structure
 
 ```
-apps/
-  web/
+web/
+  apps/
     backend/        # Next.js app
     frontend/       # Vite + React app
 
-packages/
-  ui/             # Shared UI components (built package)
-  utils/          # Shared TS utilities (no build step)
-  types/          # Shared TS types (no build step)
+  packages/
+    ui/             # Shared UI components (built package)
+    utils/          # Shared TS utilities (no build step)
+    types/          # Shared TS types (no build step)
 
 turbo.json
 package.json      # Root workspace config
@@ -59,7 +59,7 @@ Do not run apps individually unless explicitly instructed.
 
 ## App-Specific Rules
 
-### apps/web/backend (Next.js)
+### web/apps/backend (Next.js)
 - Uses **App Router**
 - ESLint must be run via:
   ```bash
@@ -69,7 +69,7 @@ Do not run apps individually unless explicitly instructed.
 - Respect React Server Components boundaries
 - Assume `use client` is required unless proven otherwise
 
-### apps/web/frontend (Vite)
+### web/apps/frontend (Vite)
 - Uses standard ESLint
 - No Next.js assumptions
 - Browser-only APIs allowed
@@ -78,7 +78,7 @@ Do not run apps individually unless explicitly instructed.
 
 ## Shared Packages Rules
 
-### packages/ui
+### web/packages/ui
 - Built package
 - Source in `src/`
 - Output in `dist/`
@@ -86,7 +86,7 @@ Do not run apps individually unless explicitly instructed.
 - Never import from `src` directly outside the package
 - Changes require running `build`
 
-### packages/utils / packages/types
+### web/packages/utils / web/packages/types
 - TypeScript-only
 - No build step unless explicitly requested
 - Can be imported directly via workspace resolution

@@ -8,7 +8,7 @@
         "turbo": "^2.0.0",
       },
     },
-    "apps/web/backend": {
+    "web/apps/backend": {
       "name": "backend",
       "version": "0.1.0",
       "dependencies": {
@@ -31,7 +31,7 @@
         "typescript": "^5",
       },
     },
-    "apps/web/frontend": {
+    "web/apps/frontend": {
       "name": "frontend",
       "version": "0.0.0",
       "dependencies": {
@@ -57,11 +57,11 @@
         "vite": "^7.2.4",
       },
     },
-    "packages/types": {
+    "web/packages/types": {
       "name": "@web/types",
       "version": "0.0.0",
     },
-    "packages/ui": {
+    "web/packages/ui": {
       "name": "@web/ui",
       "version": "0.0.0",
       "dependencies": {
@@ -486,9 +486,9 @@
 
     "@vitejs/plugin-react": ["@vitejs/plugin-react@5.1.2", "", { "dependencies": { "@babel/core": "^7.28.5", "@babel/plugin-transform-react-jsx-self": "^7.27.1", "@babel/plugin-transform-react-jsx-source": "^7.27.1", "@rolldown/pluginutils": "1.0.0-beta.53", "@types/babel__core": "^7.20.5", "react-refresh": "^0.18.0" }, "peerDependencies": { "vite": "^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0" } }, "sha512-EcA07pHJouywpzsoTUqNh5NwGayl2PPVEJKUSinGGSxFGYn+shYbqMGBg6FXDqgXum9Ou/ecb+411ssw8HImJQ=="],
 
-    "@web/types": ["@web/types@workspace:packages/types"],
+    "@web/types": ["@web/types@workspace:web/packages/types"],
 
-    "@web/ui": ["@web/ui@workspace:packages/ui"],
+    "@web/ui": ["@web/ui@workspace:web/packages/ui"],
 
     "acorn": ["acorn@8.15.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg=="],
 
@@ -528,7 +528,7 @@
 
     "axobject-query": ["axobject-query@4.1.0", "", {}, "sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ=="],
 
-    "backend": ["backend@workspace:apps/web/backend"],
+    "backend": ["backend@workspace:web/apps/backend"],
 
     "balanced-match": ["balanced-match@1.0.2", "", {}, "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="],
 
@@ -680,7 +680,7 @@
 
     "for-each": ["for-each@0.3.5", "", { "dependencies": { "is-callable": "^1.2.7" } }, "sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg=="],
 
-    "frontend": ["frontend@workspace:apps/web/frontend"],
+    "frontend": ["frontend@workspace:web/apps/frontend"],
 
     "fsevents": ["fsevents@2.3.3", "", { "os": "darwin" }, "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="],
 
